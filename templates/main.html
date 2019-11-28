@@ -1,7 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
+<h1> D-B Project</h1>
 
-<h1> Hello World.... Attempting once again to create magic!!!!</h1>
-<p1>Behold!! The power of computing!!!</p1>
+<div class="row">
+    <ul class="collapsible" data-collapsible="accordion">
+        {% for task in tasks %}
+            <li>
+                    <div class="collapsible-header">
+                        <div class="col s3">
+                        <i class="material-icons">expand_more</i>
+                        </div>
+                        <div class="col s9">
+                            <strong>{{task.title}}</strong>
+                        </div>
+                    </div>
+                    <div class="collapsible-body">
+                        <span>
+                            {{task.desc_of_problem}}
+                        </span>
+                    </div>
+                </li>
+        {% endfor %}
+    </ul>
+</div>    
 
 {% endblock %}
