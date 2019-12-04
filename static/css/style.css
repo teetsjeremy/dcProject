@@ -26,18 +26,68 @@ body{
     position:static;
 }
 
+.middle{
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
 .diag{
-    
+    background-color: #350777;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    width:250px;
+    border-radius: 15px;
+    border-radius: 15px;
+    border: 2px solid black;
+    margin: 1px;
 }
 
 .drive{
-    
+    background-color: #350777;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    width:250px;
+    border-radius: 15px;
+    border-radius: 15px;
+    border: 2px solid black;
+    margin: 1px;
 }
 
 .noises{
-    
+    background-color: #350777;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    width:250px;
+    border-radius: 15px;
+    border-radius: 15px;
+    border: 2px solid black;
+    margin: 1px;
 }
 
 .misc{
-    
+    background-color: #350777;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    width:250px;
+    border-radius: 15px;
+    border-radius: 15px;
+    border: 2px solid black;
+    margin: 1px;
 }

@@ -29,7 +29,7 @@
             in futurum.
         </div>
     </div>
-    <div class="col s6"> 
+    <div class="col s6 middle"> 
         <ul class="collapsible" data-collapsible="accordion">
             {% for task in tasks %}
                 <li>
@@ -58,18 +58,17 @@
         </ul>
     </div>
     <div class="col s3">
-        <h3>Test column</h3>
-        <div class="diag">
-            
+        <div>
+            <button class="diag">DIAGNOSTIC</button>
         </div>
-        <div class="drive">
-            
+        <div>
+            <button class="drive">DRIVE</button>
         </div>
-        <div class="noises">
-            
+        <div>
+            <button class="noises">NOISES</button>
         </div>
-        <div class="misc">
-            
+        <div>
+            <button class="misc">MISC</button>
         </div>
         <div class="right">
             <form action="{{ url_for('insert_task') }}" method="POST"  class="col s12">
