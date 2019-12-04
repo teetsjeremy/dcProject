@@ -1,0 +1,43 @@
+body{
+    background-color: #757575;
+}
+
+.left{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-radius: 20px;
+    position:static;
+}
+
+.right{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-radius: 20px;
+    position:static;
+}
+
+.diag{
+    
+}
+
+.drive{
+    
+}
+
+.noises{
+    
+}
+
+.misc{
+    
+}
