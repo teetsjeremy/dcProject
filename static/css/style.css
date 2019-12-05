@@ -1,5 +1,9 @@
 body{
-    background-color: #757575;
+    background-color: #fafafa;
+    background-image: url(https://i.pinimg.com/originals/59/40/a2/5940a279a83c46edf95e5ceb729eb855.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
 }
 
 .left{
@@ -33,7 +37,7 @@ body{
 }
 
 .diag{
-    background-color: #350777;
+    background-color: #4582b1;
     border: none;
     color: white;
     padding: 15px 25px;
@@ -48,7 +52,7 @@ body{
 }
 
 .drive{
-    background-color: #350777;
+    background-color: #1c3355;
     border: none;
     color: white;
     padding: 15px 25px;
@@ -63,7 +67,7 @@ body{
 }
 
 .noises{
-    background-color: #350777;
+    background-color: #b0292d;
     border: none;
     color: white;
     padding: 15px 25px;
@@ -78,7 +82,7 @@ body{
 }
 
 .misc{
-    background-color: #350777;
+    background-color: #d2d2da;
     border: none;
     color: white;
     padding: 15px 25px;
