@@ -24,9 +24,10 @@ def contact():
 def add_task():
     return render_template("addtask.html")
     
+    
 @app.route('/insert_task', methods=['POST'])
 def insert_task():
-    tasks = mongo.dbE9Xissues
+    tasks = mongo.db.E9Xissues
     tasks.insert_one(request.form.to_dict())
     return redirect(url_for('get_tasks'))    
 
@@ -34,7 +35,20 @@ def insert_task():
 def edit_task(task_id):
     the_task =  mongo.db.E9Xissues.find_one({"_id": ObjectId(task_id)})
     all_categories =  mongo.db.E9Xissues.find()
-    return render_template('edit.html', task=the_task, categories=all_categories)    
+    return render_template('edit.html', task=the_task, categories=all_categories)
+    
+@app.route('/update_task/<task_id>', methods=["POST"])
+def update_task(task_id):
+    tasks = mongo.db.E9Xissues
+    tasks.update( {'_id': ObjectId(task_id)},
+        {
+            'topic':request.form.get('topic'),
+            'title':request.form.get('title'),
+            'desc_of_problem': request.form.get('desc_of_problem'),
+            'fixed':request.form.get('fixed'),
+            'need.help':request.form.get('need.help')
+        })
+    return redirect(url_for('get_tasks'))    
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
