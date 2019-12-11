@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="col 12 tab">
+    <ul>
+        <li><a href="{{url_for('get_tasks')}}">HOME</a></li>
+        <li><a href="{{url_for('contact')}}">CONTACT US</a></li>
+        <li><a href="{{url_for('get_tasks')}}">SHOP</a></li>
+     </ul>
+</div>
+
+{% endblock %}

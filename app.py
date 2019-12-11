@@ -16,6 +16,10 @@ mongo = PyMongo(app)
 def get_tasks():
     return render_template("main.html", tasks=mongo.db.E9Xissues.find())
     
+@app.route('/tab')
+def tab():
+    return render_template("tab.html")
+    
 @app.route('/contact')
 def contact():
     return render_template("contact.html")
@@ -48,6 +52,11 @@ def update_task(task_id):
             'fixed':request.form.get('fixed'),
             'need.help':request.form.get('need.help')
         })
+    return redirect(url_for('get_tasks'))
+    
+@app.route('/delete_task/<task_id>')
+def delete_task(task_id):
+    mongo.db.E9Xissues.remove({"_id": ObjectId(task_id)})
     return redirect(url_for('get_tasks'))    
 
 if __name__ == '__main__':

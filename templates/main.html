@@ -76,10 +76,10 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">poll</i>
-                            <select id="category" name="category_name">
+                            <select id="category" name="topic">
                         <option value="" disabled selected>Choose Category</option>
                         {% for cat in categories %}
-                            <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                            <option value="{{cat.topic}}">{{cat.topic}}</option>
                         {% endfor %}
                         </select>
                         <label>Task Category</label>
