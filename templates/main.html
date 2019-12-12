@@ -48,8 +48,9 @@
                             </span>
                             
                             <div>
-                                <a href="{{url_for('get_tasks', task_id=task._id)}}" class="waves-effect waves-light btn btn_small">Done</a>
+                                <a href="{{url_for('get_tasks', task_id=task._id)}}" class="waves-effect waves-light btn btn_small grey">Done</a>
                                 <a href="{{url_for('edit_task', task_id=task._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>
+                                <a href="{{url_for('delete_task', task_id=task._id)}}" class="waves-effect waves-light btn btn_small red">Delete</a>
                             </div>    
                             
                         </div>
@@ -96,13 +97,6 @@
                         <i class="material-icons prefix">subject</i>
                         <textarea name="task_description" id="task_description" class="materialize-textarea"></textarea>
                         <label for="icon_telephone">Task Description</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div id="matfix" class="input-field col s12">
-                        <i class="material-icons prefix">today</i>
-                        <input id="due_date" name="due_date" type="text" class="datepicker">
-                        <label for="icon_prefix">Due Date</label>
                     </div>
                 </div>
                 <div class="row">
