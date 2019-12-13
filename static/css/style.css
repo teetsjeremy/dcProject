@@ -113,3 +113,8 @@ body{
     border: 2px solid black;
     margin: 1px;
 }
+
+.pane{
+    font: bold;
+    font-size: medium;
+}

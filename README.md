@@ -17,7 +17,7 @@ Features
 
 Existing Features
 
-View a database  - allows users to search, edit and add topics, by having them fill out a topic form.
+View a database  - allows users to view, edit and add topics, by having them fill out a topic form.
 ...
 For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
 
@@ -41,16 +41,24 @@ Whenever it is feasible, prefer to automate your tests, and if you've done so, p
 
 For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
 
+Edit issue form:
+verify all edit, delete, and done buttons work
+
+Add issue form:
+From main page
+Try to submit the empty form and verify that an empty issue is added to database list.
+
+
 Contact form:
 Go to the "Contact Us" page
 Try to submit the empty form and verify that an error message about the required fields appears
 Try to submit the form with an invalid email address and verify that a relevant error message appears
 Try to submit the form with all inputs valid and verify that a success message appears.
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+The site transitions from browser screen size and device screen size as desired. It holds its appearance and structure well.
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+I ran into several interesting bugs during development. The main issue that I addressed was actually occuring during attempted early deployment. When attempting to push to heroku, my build kept crashing due to unknown requirements being in my requirements.txt file. After much research and asking for help, I was able to determine that AWS Cloud9 environment was creating its own requirements to run the app internally and adding those requirements.
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+
 
 Deployment
 

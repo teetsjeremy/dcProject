@@ -49,6 +49,7 @@ def update_task(task_id):
             'topic':request.form.get('topic'),
             'title':request.form.get('title'),
             'desc_of_problem': request.form.get('desc_of_problem'),
+            'work_performed': request.form.get('work_performed'),
             'fixed':request.form.get('fixed'),
             'need.help':request.form.get('need.help')
         })
@@ -56,7 +57,7 @@ def update_task(task_id):
     
 @app.route('/delete_task/<task_id>')
 def delete_task(task_id):
-    mongo.db.E9Xissues.remove({"_id": ObjectId(task_id)})
+    mongo.db. E9Xissues.remove({"_id": ObjectId(task_id)})
     return redirect(url_for('get_tasks'))    
 
 if __name__ == '__main__':

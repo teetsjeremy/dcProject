@@ -33,28 +33,34 @@
         <ul class="collapsible" data-collapsible="accordion">
             {% for task in tasks %}
                 <li>
-                        <div class="collapsible-header">
-                            <div class="col s3">
-                            <i class="material-icons">expand_more</i>
-                            </div>
-                            <div class="col s9">
-                                <strong>{{task.title}}</strong>
-                            </div>
+                    <div class="collapsible-header">
+                        <div class="col s3">
+                        <i class="material-icons">expand_more</i>
                         </div>
-                        <div class="collapsible-body">
-                            
-                            <span>
-                                {{task.desc_of_problem}}
-                            </span>
-                            
-                            <div>
-                                <a href="{{url_for('get_tasks', task_id=task._id)}}" class="waves-effect waves-light btn btn_small grey">Done</a>
-                                <a href="{{url_for('edit_task', task_id=task._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>
-                                <a href="{{url_for('delete_task', task_id=task._id)}}" class="waves-effect waves-light btn btn_small red">Delete</a>
-                            </div>    
-                            
+                        <div class="col s9">
+                            <strong>{{task.topic}}</strong>
                         </div>
-                    </li>
+                    </div>
+                    <div class="collapsible-body">
+                            
+                        <span>
+                            <ul class="pane">
+                            <li>Title: {{task.title}}</li>
+                            <li>Description: {{task.desc_of_problem}}</li>
+                            <li>Work Performed: {{task.work_performed}}</li>
+                            <li>Fixed: {{task.fixed}}</li>
+                            <li>Need Help? {{task.need_help}}</li>
+                            </ul>
+                        </span>
+                            
+                        <div>
+                            <a href="{{url_for('get_tasks', task_id=task._id)}}" class="waves-effect waves-light btn btn_small grey">Done</a>
+                            <a href="{{url_for('edit_task', task_id=task._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>
+                            <a href="{{url_for('delete_task', task_id=task._id)}}" class="waves-effect waves-light btn btn_small red">Delete</a>
+                        </div>    
+                        
+                    </div>
+                </li>
             {% endfor %}
         </ul>
     </div>
