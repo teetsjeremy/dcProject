@@ -4,31 +4,28 @@
 <div class="row">
     <div class="col s3">
         <div class="left">
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-            magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-            quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-            ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-            dolor in hendrerit in vulputate velit esse molestie consequat,
-            vel illum dolore eu feugiat nulla facilisis at vero eros et
-            accumsan et iusto odio dignissim qui blandit praesent luptatum
-            zzril delenit augue duis dolore te feugait nulla facilisi.
+            <h4>Welcome to E9XIssues!</h4>
+            <p>
+                Have a question? Looking for some help? Or are you the type who likes helping and sharing your hard earned knowledge?
+            </p>
+            <p>
+                Well, we got you covered:<br>
+	            Ask<br>
+	            Update<br>
+	            Delete<br>
+            </p>
+            <p>
+                We were tired of spending all that money on diagnosis and just small questions too. So we decided why not just open up the world to help each other? Our global community of fellow E9X aficionados is here. Reach out and be that helping hand or other point of view that just might make a difference. Help us to grow and continue to make this community as helpful and powerful as we know it can be!!
+            </p>
+        </div>    
+        <div class="left">
+            <h4>Figured it out?</h4>
+            <p>
+                Figured out what’s wrong? Need parts? Click <a href="{{url_for('shop')}}">here</a> for a link to some of our trusted vendors!!
             </p>
         </div>
-        <div class="left">
-            Nam liber tempor cum soluta nobis eleifend option congue
-            nihil imperdiet doming id quod mazim placerat facer possim
-            assum. Typi non habent claritatem insitam; est usus legentis
-            in iis qui facit eorum claritatem. Investigationes
-            demonstraverunt lectores legere me lius quod ii legunt saepius.
-            Claritas est etiam processus dynamicus, qui sequitur mutationem
-            consuetudium lectorum. Mirum est notare quam littera gothica,
-            quam nunc putamus parum claram, anteposuerit litterarum formas
-            humanitatis per seacula quarta decima et quinta decima. Eodem
-            modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
-            in futurum.
-        </div>
     </div>
+    
     <div class="col s6 middle email"> 
         <ul class="collapsible" data-collapsible="accordion">
             {% for task in tasks %}
@@ -64,6 +61,7 @@
             {% endfor %}
         </ul>
     </div>
+    
     <div class="col s3 right">
         <div>
             <button class="diag">DIAGNOSTIC</button>
@@ -84,25 +82,32 @@
                         <div class="input-field col s12">
                             <i class="material-icons prefix">poll</i>
                             <select id="category" name="topic">
-                        <option value="" disabled selected>Choose Category</option>
+                        <option value="">Choose Category</option>
                         {% for cat in categories %}
                             <option value="{{cat.topic}}">{{cat.topic}}</option>
                         {% endfor %}
                         </select>
-                        <label>Task Category</label>
+                        <label>Category</label>
                         </div>
                     </div>
                     <div class="input-field col s12">
                         <i class="material-icons prefix">assignment</i>
                         <input id="task_name" name="task_name" type="text">
-                        <label for="icon_prefix">Task Name</label>
+                        <label for="icon_prefix">Topic Name</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">subject</i>
                         <textarea name="task_description" id="task_description" class="materialize-textarea"></textarea>
-                        <label for="icon_telephone">Task Description</label>
+                        <label for="icon_telephone">Description</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">subject</i>
+                        <textarea name="task_description" id="task_description" class="materialize-textarea"></textarea>
+                        <label for="icon_telephone">Work Performed</label>
                     </div>
                 </div>
                 <div class="row">
@@ -113,16 +118,23 @@
                           Fixed
                         </label>
                     </div>
+                    <div class="switch">
+                        <label>
+                          <input id="is_urgent" name="is_urgent" type="checkbox">
+                          <span class="lever"></span>
+                          Need Help?
+                        </label>
+                    </div>
                 </div>
                 <div class="row">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Add Task
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Add Topic
                         <i class="material-icons right">playlist_add</i>
                      </button>
                 </div>
             </form>
         </div>
     </div>
-
+    
 </div>    
 
 {% endblock %}

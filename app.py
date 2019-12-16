@@ -16,6 +16,10 @@ mongo = PyMongo(app)
 def get_tasks():
     return render_template("main.html", tasks=mongo.db.E9Xissues.find())
     
+@app.route('/diagnostic')
+def diagnostic():
+    return render_template("main.html", tasks=mongo.db.E9Xissues.find(diagnostic))
+    
 @app.route('/tab')
 def tab():
     return render_template("tab.html")
@@ -23,6 +27,10 @@ def tab():
 @app.route('/contact')
 def contact():
     return render_template("contact.html")
+    
+@app.route('/shop')
+def shop():
+    return render_template("shop.html")
     
 @app.route('/add_task')
 def add_task():
@@ -37,8 +45,8 @@ def insert_task():
 
 @app.route('/edit_task/<task_id>')
 def edit_task(task_id):
-    the_task =  mongo.db.E9Xissues.find_one({"_id": ObjectId(task_id)})
-    all_categories =  mongo.db.E9Xissues.find()
+    the_task =  mongo.db.E9Xissues.find_one({"topic": ObjectId(task_id)})
+    all_categories =  mongo.db.E9Xissues.find({"topic": ObjectId(task_id)})
     return render_template('edit.html', task=the_task, categories=all_categories)
     
 @app.route('/update_task/<task_id>', methods=["POST"])

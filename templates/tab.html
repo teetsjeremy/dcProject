@@ -9,4 +9,20 @@
      </ul>
 </div>
 
+<div class="col 12 tab">
+    
+    <span>
+        <ul>
+            {% for topic in diagnostic %}
+            <li>Title: {{task.title}}</li>
+            <li>Description: {{task.desc_of_problem}}</li>
+            <li>Work Performed: {{task.work_performed}}</li>
+            <li>Fixed: {{task.fixed}}</li>
+            <li>Need Help? {{task.need_help}}</li>
+            {% endfor %}
+        </ul>
+    </span>
+    
+</div>
+
 {% endblock %}
