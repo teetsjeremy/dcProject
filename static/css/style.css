@@ -4,6 +4,7 @@ body{
     background-repeat: no-repeat;
     background-position: bottom;
     background-attachment: fixed;
+    font-family: 'Geneva', serif;
 }
 
 .left{
@@ -117,4 +118,15 @@ body{
 .pane{
     font: bold;
     font-size: medium;
+}
+
+.shop{
+    font: bold;
+    font-size:medium;
+    text-decoration: none;
+    font-family: 'Geneva',serif;
+}
+
+.container{
+    padding: 3px;
 }
