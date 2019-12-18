@@ -6,30 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>dc-Project</title>
         
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />    
+        
+        
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     
+    <link href="{{url_for('static', filename='css/materialize.css')}}" type="text/css" rel="stylesheet"/>
+    
+    <link href="{{url_for('static', filename='css/style.css')}}" type="text/css" rel="stylesheet"/>
+        
+
+        
 </head>
 <body>
     
     <header>
+        
         <nav>
             <div class="nav-wrapper">
                 <a href="{{url_for('get_tasks')}}" class="brand-logo">e9xIssues</a>
-                 <a href="{{url_for('tab')}}" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="{{url_for('get_tasks')}}">HOME</a></li>
-                    <li><a href="{{url_for('contact')}}">CONTACT US</a></li>
-                    <li><a href="https://www.shopbmwusa.com/HOME?gclid=EAIaIQobChMI4fHkqOmu5gIVSr3ACh0KjQS4EAAYASAAEgK5lPD_BwE" target="blank">SHOP</a></li>
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a href="{{url_for('get_tasks')}}">HOME</a></li>
-                    <li><a href="{{url_for('contact')}}">CONTACT US</a></li>
-                    <li><a href="https://www.shopbmwusa.com/HOME?gclid=EAIaIQobChMI4fHkqOmu5gIVSr3ACh0KjQS4EAAYASAAEgK5lPD_BwE">SHOP</a></li>
-                </ul>
+                <a href="#" data-activates="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             </div>
         </nav>
+        <ul id="slide-out" class="sidenav" style="transform: translateX(0%);">
+            <li class="bold"><a href="{{url_for('get_tasks')}}" class="waves-effect waves-teal">HOME</a></li>
+            <li class="bold"><a href="{{url_for('contact')}}" class="waves-effect waves-teal">CONTACT US</a></li>
+            <li class="bold"><a href="{{url_for('shop')}}" class="waves-effect waves-teal">SHOP</a></li>
+        </ul>
+
     </header>
     
     <div class="container">
@@ -37,15 +40,23 @@
     </div> 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/materialize.min.js')}}"></script>
+    
+    <script type="text/javascript" src="{{url_for('static', filename='js/Gruntfile.js')}}"></script>
+    
     <script type="text/javascript">
+    
         $(document).ready(function() {
-            $('.collapsible').collapsible();
-            $('select').material_select();
-        });
+            $('.sidenav').sidenav();});
+            
+        $(document).ready(function() {    
+            $('.collapsible').collapsible();});
+            
+        $(document).ready(function() {
+            $('select').material_select();});
         
-        document.getElementById("matfix").addEventListener("click", function(e) {e.stopPropagation(); });
+        $(document).getElementById("matfix").addEventListener("click", function(e) {e.stopPropagation(); });
         
-        </script>
+    </script>
 </body>
 </html>
