@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="row">
-    <div class="col s3">
+    <div class="col s12 m3 l3">
         <div class="left">
             <h4>Welcome to E9XIssues!</h4>
             <p class="shop">
@@ -26,7 +26,7 @@
         </div>
     </div>
     
-    <div class="col s6 middle email"> 
+    <div class="col s12 m6 l6 middle email"> 
         <ul class="collapsible" data-collapsible="accordion">
             {% for task in tasks %}
                 <li>
@@ -62,20 +62,22 @@
         </ul>
     </div>
     
-    <div class="col s3 right">
-        <div>
-            <button class="diag">DIAGNOSTIC</button>
+    <div class="col s12 m3 l3 right">
+        <div class="center">
+            <div>
+                <button class="diag">DIAGNOSTIC</button>
+            </div>
+            <div>
+                <button class="drive">DRIVE</button>
+            </div>
+            <div>
+                <button class="noises">NOISES</button>
+            </div>
+            <div>
+                <button class="misc">MISC</button>
+            </div>
         </div>
-        <div>
-            <button class="drive">DRIVE</button>
-        </div>
-        <div>
-            <button class="noises">NOISES</button>
-        </div>
-        <div>
-            <button class="misc">MISC</button>
-        </div>
-        <div class="right">
+        <div class="center">
             <form action="{{ url_for('insert_task') }}" method="POST"  class="col s12">
                 <div class="row">
                     <div class="row">

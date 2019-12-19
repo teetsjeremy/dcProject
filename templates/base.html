@@ -24,10 +24,17 @@
         <nav>
             <div class="nav-wrapper">
                 <a href="{{url_for('get_tasks')}}" class="brand-logo">e9xIssues</a>
-                <a href="#" data-activates="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <a href="#" data-activates="mobile-demo" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li class="bold"><a href="{{url_for('get_tasks')}}" class="waves-effect waves-teal">HOME</a></li>
+                    <li class="bold"><a href="{{url_for('contact')}}" class="waves-effect waves-teal">CONTACT US</a></li>
+                    <li class="bold"><a href="{{url_for('shop')}}" class="waves-effect waves-teal">SHOP</a></li>
+                </ul>
             </div>
         </nav>
-        <ul id="slide-out" class="sidenav" style="transform: translateX(0%);">
+        <ul class="sidenav" id="mobile-demo" >
             <li class="bold"><a href="{{url_for('get_tasks')}}" class="waves-effect waves-teal">HOME</a></li>
             <li class="bold"><a href="{{url_for('contact')}}" class="waves-effect waves-teal">CONTACT US</a></li>
             <li class="bold"><a href="{{url_for('shop')}}" class="waves-effect waves-teal">SHOP</a></li>
@@ -38,25 +45,27 @@
     <div class="container">
         {% block content %} {% endblock %}
     </div> 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="{{url_for('static', filename='js/materialize.min.js')}}"></script>
-    
-    <script type="text/javascript" src="{{url_for('static', filename='js/Gruntfile.js')}}"></script>
-    
-    <script type="text/javascript">
-    
-        $(document).ready(function() {
-            $('.sidenav').sidenav();});
-            
-        $(document).ready(function() {    
-            $('.collapsible').collapsible();});
-            
-        $(document).ready(function() {
-            $('select').material_select();});
+    <footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='js/materialize.min.js')}}"></script>
         
-        $(document).getElementById("matfix").addEventListener("click", function(e) {e.stopPropagation(); });
+        <script type="text/javascript" src="{{url_for('static', filename='js/Gruntfile.js')}}"></script>
         
-    </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.sidenav').sidenav();
+            });
+        
+            $(document).ready(function() {
+                $('.collapsible').collapsible();
+            });
+        
+            $(document).ready(function() {
+                $('select').material_select();
+            });
+        
+            $(document).getElementById("matfix").addEventListener("click", function(e) { e.stopPropagation(); });
+        </script>
+    </footer>
 </body>
 </html>
