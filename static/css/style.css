@@ -20,10 +20,6 @@ body{
     background-color: #ffffffe3;
 }
 
-.center{
-    background-color: #ffffffe3;
-}
-
 /*.right{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -34,6 +30,7 @@ body{
     border: 2px solid #eee;
     border-radius: 20px;
     position: static;
+    background-color: #ffffffe3;
 }*/
 
 .middle{
@@ -120,11 +117,6 @@ body{
     margin: 1px;
 }
 
-.pane{
-    font: bold;
-    font-size: medium;
-}
-
 .shop{
     font: bold;
     font-size:medium;
@@ -134,4 +126,19 @@ body{
 
 .container{
     padding: 3px;
+}
+
+.pane{
+   -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-radius: 20px;
+    position:static;
+    background-color: #ffffffe3;
+    font: bold;
+    font-size: medium;
 }
