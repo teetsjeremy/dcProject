@@ -142,3 +142,7 @@ body{
     font: bold;
     font-size: medium;
 }
+
+.nav-wrapper{
+    background-color: #4582b1;
+}
