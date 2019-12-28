@@ -5,12 +5,13 @@ body{
     background-position: bottom;
     background-attachment: fixed;
     font-family: 'Geneva', serif;
+    padding-top:75px;
 }
 
 .left{
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
     width: auto;
     height: auto;
     padding: 10px;
@@ -124,10 +125,6 @@ body{
     font-family: 'Geneva',serif;
 }
 
-.container{
-    padding: 3px;
-}
-
 .pane{
    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -135,8 +132,6 @@ body{
     width: auto;
     height: auto;
     padding: 10px;
-    border: 2px solid #eee;
-    border-radius: 20px;
     position:static;
     background-color: #ffffffe3;
     font: bold;

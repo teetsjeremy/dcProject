@@ -1,136 +1,154 @@
 {% extends 'base.html' %}
+
 {% block content %}
 
-<div class="row">
-    <div class="col s12 m3 l3">
-        <div class="left">
-            <h4>Welcome to E9XIssues!</h4>
-            <p class="shop">
-                Have a question? Looking for some help? Or are you the type who likes helping and sharing your hard earned knowledge?
-            </p>
-            <p class= "shop">
-                Well, we got you covered:<br>
-	            Ask<br>
-	            Update<br>
-	            Delete<br>
-            </p>
-            <p class="shop">
-                We were tired of spending all that money on diagnosis and just small questions too. So we decided why not just open up the world to help each other? Our global community of fellow E9X aficionados is here. Reach out and be that helping hand or other point of view that just might make a difference. Help us to grow and continue to make this community as helpful and powerful as we know it can be!!
-            </p>
-        </div>    
-        <div class="left">
-            <h4>Figured it out?</h4>
-            <p class="shop">
-                Figured out what’s wrong? Need parts? Click <a href="{{url_for('shop')}}">here</a> for a link to some of our trusted vendors!!
-            </p>
-        </div>
-    </div>
-    
-    <div class="col s12 m6 l6 middle email"> 
-        <ul class="collapsible" data-collapsible="accordion">
-            {% for task in tasks %}
-                <li>
-                    <div class="collapsible-header">
-                        <div class="col s3">
-                        <i class="material-icons">expand_more</i>
-                        </div>
-                        <div class="col s9">
-                            <strong>{{task.topic}}</strong>
-                        </div>
-                    </div>
-                    <div class="collapsible-body">
-                            
-                        <span>
-                            <ul class="pane">
-                            <li>Title: {{task.title}}</li>
-                            <li>Description: {{task.desc_of_problem}}</li>
-                            <li>Work Performed: {{task.work_performed}}</li>
-                            <li>Fixed: {{task.fixed}}</li>
-                            <li>Need Help? {{task.need_help}}</li>
-                            </ul>
-                        </span>
-                            
-                        <div>
-                            <a href="{{url_for('get_tasks', task_id=task._id)}}" class="waves-effect waves-light btn btn_small grey">Done</a>
-                            <a href="{{url_for('edit_task', task_id=task._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>
-                            <a href="{{url_for('delete_task', task_id=task._id)}}" class="waves-effect waves-light btn btn_small red">Delete</a>
-                        </div>    
-                        
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
-    
-    <div class="col s12 m3 l3 right">
-        <div class="center">
-            <div>
-                <button class="diag">DIAGNOSTIC</button>
+<container>
+    <div class="row">
+         
+        <div class="col-sm col-md col-lg">
+                <div class="left">
+                    <h4>Welcome to E9XIssues!</h4>
+                    <p class="shop">
+                        Have a question? Looking for some help? Or are you the type who likes helping and sharing your hard earned knowledge?
+                    </p>
+                    <p class= "shop">
+                        Well, we got you covered:<br>
+        	            Ask<br>
+        	            Update<br>
+        	            Delete<br>
+                    </p>
+                    <p class="shop">
+                        We were tired of spending all that money on diagnosis and just small questions too. So we decided why not just open up the world to help each other? Our global community of fellow E9X aficionados is here. Reach out and be that helping hand or other point of view that just might make a difference. Help us to grow and continue to make this community as helpful and powerful as we know it can be!!
+                    </p>
+                </div>    
+                <div class="left">
+                    <h4>Figured it out?</h4>
+                    <p class="shop">
+                        Figured out what’s wrong? Need parts? Click <a href="{{url_for('shop')}}">here</a> for a link to some of our trusted vendors!!
+                    </p>
+                </div>
             </div>
-            <div>
-                <button class="drive">DRIVE</button>
-            </div>
-            <div>
-                <button class="noises">NOISES</button>
-            </div>
-            <div>
-                <button class="misc">MISC</button>
-            </div>
-        </div>
-        <div>
-            <form action="{{ url_for('insert_task') }}" method="POST" class="col s12 pane">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">poll</i>
-                        <input id="topic" name="topic" type="text">
-                        <label for="icon_prefix">Category</label>
+            
+        <div class="col-sm col-md col-lg middle email"> 
+            <div class="accordion" id="accordionExample">
+                {% for task in tasks %}
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                              <strong>{{task.topic}}</strong>
+                            </button>
+                        </h2>
                     </div>
                     
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">assignment</i>
-                        <input id="title" name="title" type="text">
-                        <label for="icon_prefix">Topic Name</label>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <span>
+                                <ul class="pane">
+                                <li>Title: {{task.title}}</li>
+                                <li>Description: {{task.desc_of_problem}}</li>
+                                <li>Work Performed: {{task.work_performed}}</li>
+                                <li>Fixed: {{task.fixed}}</li>
+                                <li>Need Help? {{task.need_help}}</li>
+                                </ul>
+                            </span>
+                            <div>
+                                <a href="{{url_for('get_tasks', task_id=task._id)}}" type="button" class="btn btn-outline-primary">Done</a>
+                                <a href="{{url_for('edit_task', task_id=task._id)}}" type="button" class="btn btn-outline-secondary">Edit</a>
+                                <a href="{{url_for('delete_task', task_id=task._id)}}" type="button" class="btn btn-outline-danger">Delete</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">subject</i>
-                        <textarea name="desc_of_problem" id="desc_of_problem" class="materialize-textarea"></textarea>
-                        <label for="icon_telephone">Description</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">subject</i>
-                        <textarea name="work_performed" id="work_performed" class="materialize-textarea"></textarea>
-                        <label for="icon_telephone">Work Performed</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="switch">
-                        <label>
-                                      <input id="fixed" name="fixed" type="checkbox">
-                                      <span class="lever"></span>
-                                      Fixed
-                                    </label>
-                    </div>
-                    <div class="switch">
-                        <label>
-                                      <input id="need_help" name="need_help" type="checkbox">
-                                      <span class="lever"></span>
-                                      Need Help?
-                                    </label>
-                    </div>
-                </div>
-                <div class="row">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Add Topic
-                                    <i class="material-icons right">playlist_add</i>
-                                 </button>
-                </div>
-            </form>
+                {% endfor %}
+            </div>
         </div>
-    </div>
-    
-</div>    
+            
+        <div class="col-sm col-md col-lg right">
+                <div class="center">
+                    <p>
+                        <button class="diag" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        DIAGNOSTIC
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            ISSUES RELATING TO DIAGNOSTICS.<br>
+                            Including: check engine lights, module failure, coding and programming
+                        </div>
+                    </div>
+                    <p>
+                        <button class="drive" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                        DRIVE
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExample1">
+                        <div class="card card-body">
+                            ISSUES RELATING TO DRIVABILITY.<br>
+                            Including: vibrations, handling, as well as general driving issues
+                        </div>
+                    </div>
+                    <p>
+                        <button class="noises" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                        NOISES
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExample2">
+                        <div class="card card-body">
+                            ISSUES RELATING TO NOISES.<br>
+                            Including: those nasty pings, pops, squeaks, and rattles
+                        </div>
+                    </div>
+                    <p>
+                        <button class="misc" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+                        MISC
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExample3">
+                        <div class="card card-body">
+                            MISCELLANEOUS<br>
+                            Various other issues or concerns you may have about your e9x
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <form action="{{ url_for('insert_task') }}" method="POST" class="col sm-12 pane">
+                        <div class="form-group">
+                            <select class="custom-select" input id="_id" name="topic" type="text">
+                              <option selected>Category</option>
+                              <option value="DIAGNOSTIC">DIAGNOSTIC</option>
+                              <option value="DRIVE">DRIVE</option>
+                              <option value="NOISES">NOISES</option>
+                              <option value="MISC">MISC</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Topic Name</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" id="title" name="title" type="text" rows="2"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Description</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="desc_of_problem" id="desc_of_problem" rows="2"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Work Performed</label>
+                            <textarea class="form-control" name="work_performed" id="exampleFormControlTextarea1 work_performed" rows="2"></textarea>
+                        </div>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1" id="fixed" name="fixed">
+                            <label class="custom-control-label" for="customSwitch1">Fixed?</label>
+                        </div>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch2" id="need_help" name="need_help">
+                            <label class="custom-control-label" for="customSwitch2">Need Help?</label>
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-outline-dark" type="submit" name="action">Add Topic</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
+    </div>
+</container>
 {% endblock %}
