@@ -6,12 +6,8 @@ I came up with the idea of a forum type site that allows members to search, add 
 
 UX
 
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+This website was created with the idea of allowing BMW owners to talk about and share questions they may be having regarding issues with thier car. By using the site, they can simply post a question/comment/issue and have people from accross different communities help them.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-
-As a user type, I want to perform an action, so that I can achieve a goal.
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
 
 Features
 
@@ -25,24 +21,21 @@ Shop page  - provides links to various outside pages that provide auto parts
 
 Features Left to Implement
 
-I would like to implement a search engine to sort and find issues
+I would like to implement a search engine to sort and find issues. I would also like to possible create a notification system to alert users when someone has updated thier post.
 
 Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+Framework
+Bootstrap is the framework that I ended up using. I originally used materialize, however I couldn't get elements to render the way I wanted. So I simply switched to a framework that I am more familiar with.
 
 JQuery
 The project uses JQuery to simplify DOM manipulation.
 
+Email
+The contact form was put in place but not actually initialized as I felt it was unneccesary to have any actual emails be sent for the project
 
 
 Testing
-
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
-
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
 
 Edit issue form:
 verify all edit, delete, and done buttons work
@@ -61,31 +54,23 @@ The site transitions from browser screen size and device screen size as desired.
 
 I ran into several interesting bugs during development. The main issue that I addressed was actually occuring during attempted early deployment. When attempting to push to heroku, my build kept crashing due to unknown requirements being in my requirements.txt file. After much research and asking for help, I was able to determine that AWS Cloud9 environment was creating its own requirements to run the app internally and adding those requirements.
 
-
+I struggled with getting the edit task function to work properly. I was unable to get the data from the database to actually bind to the form and then update the task as opposed to creating a whole new topic/task.
 
 Deployment
+I used heroko to deploy my site. All parameters used were taken directly from the mini project instructions earlier in the unit.
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
-
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-
-Different values for environment variables (Heroku Config Vars)?
-Different configuration files?
-Separate git branch?
-In addition, if it is not obvious, you should also describe how to run your code locally.
+The only major differences between production and final implementation was just basic CSS stylings that I thought just didn't look quite right.
 
 Credits
+I recieved tutoring support from contacts I have in the tech field as well as help from the CodeInstitute tutor page.
 
-Content
-
-The text for section Y was copied from the Wikipedia article Z
 Media
+Background image borrowed from: https://i.pinimg.com/originals/59/40/a2/5940a279a83c46edf95e5ceb729eb855.jpg
+Card images in shop.html are borrowed from: (Factory: https://i.pinimg.com/originals/30/7a/b3/307ab308010b03eb53696a168a0afc5a.jpg)
+(Third Party: https://i.pinimg.com/originals/30/7a/b3/307ab308010b03eb53696a168a0afc5a.jpg) 
+(Aftermarket: https://bimmertips.com/wp-content/uploads/2018/05/BMW_Style_219_M_E92_M3_Wheels.jpg)
 
-The photos used in this site were obtained from ...
 Acknowledgements
-
-I received inspiration for this project from X
-
 
 email form from: http://reusableforms.com/d/a/contact-form-bootstrap
 

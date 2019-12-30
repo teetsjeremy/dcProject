@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% for task in E9XIssues%} {(task.topic)} {(task.title)} {(task.desc_of_problem)} {(task.work_performed)} {(task.fixed)} {(task.need_help)} {% endfor %}
+
 <container>
     <div class="row">
          
@@ -49,7 +51,7 @@
                                 <li>Description: {{task.desc_of_problem}}</li>
                                 <li>Work Performed: {{task.work_performed}}</li>
                                 <li>Fixed: {{task.fixed}}</li>
-                                <li>Need Help? {{task.need_help}}</li>
+                                <li>Need Help?: {{task.need_help}}</li>
                                 </ul>
                             </span>
                             <div>
