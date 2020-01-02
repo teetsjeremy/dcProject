@@ -44,6 +44,9 @@ Add issue form:
 From main page
 Try to submit the empty form and verify that an empty issue is added to database list.
 
+Edit issue form:
+Ensure that all correct data is transferred to the form when clicking the task.
+Edit all possible fields as well as not editing any to verifyform updates correctly on the main page.
 
 Contact form:
 Go to the "Contact Us" page
@@ -54,12 +57,12 @@ The site transitions from browser screen size and device screen size as desired.
 
 I ran into several interesting bugs during development. The main issue that I addressed was actually occuring during attempted early deployment. When attempting to push to heroku, my build kept crashing due to unknown requirements being in my requirements.txt file. After much research and asking for help, I was able to determine that AWS Cloud9 environment was creating its own requirements to run the app internally and adding those requirements.
 
-I struggled with getting the edit task function to work properly. I was unable to get the data from the database to actually bind to the form and then update the task as opposed to creating a whole new topic/task.
+I struggled with getting the edit task function to work properly. I was unable to get the data from the database to actually bind to the form. Once I found out where my errors were in my python apps and database structure, all functions worked correctly. 
 
 Deployment
 I used heroko to deploy my site. All parameters used were taken directly from the mini project instructions earlier in the unit.
 
-The only major differences between production and final implementation was just basic CSS stylings that I thought just didn't look quite right.
+The only major differences between production and final implementation was just basic CSS stylings that I thought just didn't look quite right, as well as changing the framework from materialize to bootstrap.
 
 Credits
 I recieved tutoring support from contacts I have in the tech field as well as help from the CodeInstitute tutor page.

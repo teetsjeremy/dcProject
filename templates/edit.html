@@ -1,44 +1,60 @@
 {% extends 'base.html' %}
 {% block content %}
-{% for task in E9XIssues%} {(task.topic)} {(task.title)} {(task.desc_of_problem)} {(task.work_performed)} {(task.fixed)} {(task.need_help)} {% endfor %}
+
 <h3>Edit Topic</h3>
 
-<form action="{{ url_for('insert_task') }}" method="POST" class="col sm-12 pane">
+<form action="{{ url_for('update_task', task_id=task._id) }}" method="POST" class="col sm-12 pane">
     <div class="form-group">
-        <select class="custom-select" input id="topic" name="topic" type="text">
-            <option selected>Topic</option>
-            {% for cat in E9Xissues %}
-                {% if cat.topic == task.topic %}
-                <option value="{{cat.topic}}" selected >{{cat.topic}}</option>
+        
+        <select class="custom-select" input id="category_name" name="category_name" type="text">
+            <option value="" disabled selected>Choose Category </option>
+            {% for cat in categories %}
+                {%if cat.category_name == task.category_name %}
+                <option value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
                 {% else %}
-                <option value="{{cat.topic}}">{{cat.topic}}</option>
+                <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                 {% endif %}
-            {% endfor %}
+            {% endfor %}    
         </select>
+        
+    </div>
+    
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Title</label>
+        
+        <textarea class="form-control" id="exampleFormControlTextarea1" id="title" name="title" type="text" rows="2" value="{{task.title}}">{{task.title}}</textarea>
+        
     </div>
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">Topic Name</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" id="title" name="title" type="text" rows="2"></textarea>
+        <label for="exampleFormControlTextarea2">Description</label>
+        <textarea class="form-control" id="exampleFormControlTextarea2" name="desc_of_problem" id="desc_of_problem" rows="2" value="{{task.desc_of_problem}}">{{task.desc_of_problem}}</textarea>
     </div>
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">Description</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" name="desc_of_problem" id="desc_of_problem" rows="2"></textarea>
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlTextarea1">Work Performed</label>
-        <textarea class="form-control" name="work_performed" id="exampleFormControlTextarea1 work_performed" rows="2"></textarea>
+        <label for="exampleFormControlTextarea3">Work Performed</label>
+        <textarea class="form-control" name="work_performed" id="exampleFormControlTextarea3 work_performed" rows="2" value ="{{task.work_performed}}">{{task.work_performed}}</textarea>
     </div>
     <div class="custom-control custom-switch">
+        {% if task.fixed %}
+        <input type="checkbox" class="custom-control-input" id="customSwitch1" id="fixed" name="fixed" checked= True>
+        {% else %}
         <input type="checkbox" class="custom-control-input" id="customSwitch1" id="fixed" name="fixed">
-        <label class="custom-control-label" for="customSwitch1">Fixed?</label>
+        {% endif %}
+        <label class="custom-control-label" for="customSwitch1">
+            Fixed?
+        </label>
     </div>
     <div class="custom-control custom-switch">
+        {% if task.need_help %}
+        <input type="checkbox" class="custom-control-input" id="customSwitch2" id="need_help" name="need_help" checked>
+        {% else %}
         <input type="checkbox" class="custom-control-input" id="customSwitch2" id="need_help" name="need_help">
+        {% endif %}
         <label class="custom-control-label" for="customSwitch2">Need Help?</label>
     </div>
     <div class="row">
         <button class="btn btn-outline-dark" type="submit" name="action">UPDATE</button>
     </div>
+    
 </form>
 
 <!-- <form action="{{ url_for('edit_task', task_id=task._id) }}" method="POST" class="col s12">
@@ -55,11 +71,11 @@
         
         #<!-- <div class="input-field col s12">
             <i class="material-icons prefix">poll</i>
-            <select id="category" name="category_name">
+            <select id="category" name="topic">
                   <option value=""selected>Choose Category</option>
                   {% for cat in categories %}
-                      {% if cat.category_name == task.category_name%}
-                      <option value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
+                      {% if cat.topic == task.topic%}
+                      <option value="{{cat.top}}" selected >{{cat.category_name}}</option>
                       {% else %}
                        <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                     {% endif %}
@@ -72,15 +88,15 @@
     <div class="row">
         <div class="input-field col s12">
             <i class="material-icons prefix">assignment</i>
-            <input id="task_name" name="task_name" type="text" class="validate" value="{{task.task_name}}">
+            <input id="topic" name="topic" type="text" class="validate" value="{{task.topic}}">
             <label for="icon_prefix">Task Name</label>
         </div>
     </div>
     <div class="row">
         <div class="input-field col s12">
             <i class="material-icons prefix">subject</i>
-            <textarea name="task_description" id="task_description" class="materialize-textarea">{{task.task_description}}</textarea>
-            <label for="icon_telephone">Task Description</label>
+            <textarea name="desc_of_problem" id="desc_of_problem" class="materialize-textarea">{{task.desc_of_problem}}</textarea>
+            <label for="icon_telephone">Task Description>
         </div>
     </div>
 

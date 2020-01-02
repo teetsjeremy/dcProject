@@ -14,11 +14,15 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_tasks')
 def get_tasks():
-    return render_template("main.html", tasks=mongo.db.E9Xissues.find())
+    _tasks = mongo.db.tasks.find()
+    task_list = [task for task in _tasks]
+    return render_template("main.html", tasks = task_list)
     
 @app.route('/diagnostic')
 def diagnostic():
-    return render_template("main.html", tasks=mongo.db.E9Xissues.find(diagnostic))
+    _tasks=mongo.db.tasks.find(diagnostic)
+    task_list = [task for task in _tasks]
+    return render_template("main.html", tasks = task_list)
     
 @app.route('/tab')
 def tab():
@@ -32,29 +36,25 @@ def contact():
 def shop():
     return render_template("shop.html")
     
-@app.route('/add_task')
-def add_task():
-    return render_template("addtask.html")
-    
 @app.route('/insert_task', methods=['POST'])
 def insert_task():
-    tasks =  mongo.db.E9Xissues
+    tasks =  mongo.db.tasks
     tasks.insert_one(request.form.to_dict())
     return redirect(url_for('get_tasks'))
 
 @app.route('/edit_task/<task_id>')
 def edit_task(task_id):
-    the_task =  mongo.db.E9Xissues.find_one({".topic": ObjectId(task_id)})
-    all_categories =  mongo.db.E9Xissues.find()
-    return render_template('edit.html', task=the_task, categories=all_categories)
+    the_task =  mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    all_categories =  mongo.db.categories.find()
+    category_list = [category for category in all_categories]
+    return render_template('edit.html', task=the_task, categories=category_list)
     
 @app.route('/update_task/<task_id>', methods=["POST"])
 def update_task(task_id):
-
-    tasks = mongo.db.E9Xissues
-    tasks.update( {'topic': ObjectId(task_id)},
+    tasks = mongo.db.tasks
+    tasks.update( {'_id': ObjectId(task_id)},
         {
-            'topic':request.form.get('topic'),
+            'category_name':request.form.get('category_name'),
             'title':request.form.get('title'),
             'desc_of_problem': request.form.get('desc_of_problem'),
             'work_performed': request.form.get('work_performed'),
@@ -65,7 +65,7 @@ def update_task(task_id):
     
 @app.route('/delete_task/<task_id>')
 def delete_task(task_id):
-    mongo.db. E9Xissues.remove({"_id": ObjectId(task_id)})
+    mongo.db.tasks.remove({"_id": ObjectId(task_id)})
     return redirect(url_for('get_tasks'))    
 
 if __name__ == '__main__':

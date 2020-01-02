@@ -1,59 +1,85 @@
 {% extends 'base.html' %}
-<header>
-  
-</header>
 
 {% block content %}
+<!--
+<ul class="list-unstyled">
+  <li class="media">
+    <img src="https://i.pinimg.com/originals/30/7a/b3/307ab308010b03eb53696a168a0afc5a.jpg" class="mr-3" alt="Official BMW">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Official BMW</h5>
+      Factory direct parts from the official BMW page
+    </div>
+  </li>
+  <li class="media my-4">
+    <img src="http://www.bimmerworld.com/Genuine-BMW-E90-E92-M3-Comp-Package-ZCP-1M-Wheels-51712240832-51-71-2-240-832-1.jpg" class="mr-3" alt="Third Party Parts">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Third Party</h5>
+      Quality parts from trusted 3rd party vendors
+    </div>
+  </li>
+  <li class="media">
+    <img src="https://bimmertips.com/wp-content/uploads/2018/05/BMW_Style_219_M_E92_M3_Wheels.jpg" class="mr-3" alt="Aftermarket Parts">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Aftermarket</h5>
+      Affordable and dependable parts
+    </div>
+  </li>
+</ul>
+!-->
 
-  <div class="column factory">
-      <h4>Official BMW</h4>
-      <div class="col-lg4">
-        <div class="card medium">
-          <div class="card-image">
-            <img src="https://i.pinimg.com/originals/30/7a/b3/307ab308010b03eb53696a168a0afc5a.jpg">
-          </div>
-          <div class="card-content">
-            <p>Factory direct parts from the official BMW page</p>
-          </div>
-          <div class="card-action">
-            <a href="https://www.shopbmwusa.com/HOME" target="blank">Shop Factory Parts</a>
-          </div>
-        </div>
-      </div>
-  </div>
-  
-  <div class="column certified">
-      <h4>Third Party</h4>
-      <div class="col-sm12 col-md7">
-        <div class="card medium">
-          <div class="card-image">
-            <img src="http://www.bimmerworld.com/Genuine-BMW-E90-E92-M3-Comp-Package-ZCP-1M-Wheels-51712240832-51-71-2-240-832-1.jpg">
-           </div>
-          <div class="card-content">
-            <p>Quality parts from trusted 3rd party vendors</p>
-          </div>
-          <div class="card-action">
-            <a href="https://www.bmwautopartswholesale.com" target="blank">Shop Genuine Parts</a>
+<div class="container">
+  <div class="row"> 
+    <div class="col-sm factory">
+        <h4>Official BMW</h4>
+        <div class="col-lg-4">
+          <div class="card medium">
+            <div class="card-image">
+              <img src="https://i.pinimg.com/originals/30/7a/b3/307ab308010b03eb53696a168a0afc5a.jpg">
+            </div>
+            <div class="card-content">
+              <p>Factory direct parts from the official BMW page</p>
+            </div>
+            <div class="card-action">
+              <a href="https://www.shopbmwusa.com/HOME" target="blank">Shop Factory Parts</a>
+            </div>
           </div>
         </div>
-      </div>
-  </div>
-  
-  <div class="column after-market">
-      <h4>Aftermarket</h4>
-      <div class="col-sm12 col-md7">
-        <div class="card medium">
-          <div class="card-image">
-            <img src="https://bimmertips.com/wp-content/uploads/2018/05/BMW_Style_219_M_E92_M3_Wheels.jpg">
-          </div>
-          <div class="card-content">
-            <p>Affordable and dependable parts</p>
-          </div>
-          <div class="card-action">
-            <a href="https://www.fcpeuro.com/BMW-parts/" target="blank">Shop Aftermarket Parts</a>
+    </div>
+    
+    <div class="col-sm certified">
+        <h4>Third Party</h4>
+        <div class="col-lg-4">
+          <div class="card medium">
+            <div class="card-image">
+              <img src="http://www.bimmerworld.com/Genuine-BMW-E90-E92-M3-Comp-Package-ZCP-1M-Wheels-51712240832-51-71-2-240-832-1.jpg">
+             </div>
+            <div class="card-content">
+              <p>Quality parts from trusted 3rd party vendors</p>
+            </div>
+            <div class="card-action">
+              <a href="https://www.bmwautopartswholesale.com" target="blank">Shop Genuine Parts</a>
+            </div>
           </div>
         </div>
-      </div>
+    </div>
+    
+    <div class="col-sm after-market ">
+        <h4>Aftermarket</h4>
+        <div class="col-sm">
+          <div class="card medium">
+            <div class="card-image">
+              <img src="https://bimmertips.com/wp-content/uploads/2018/05/BMW_Style_219_M_E92_M3_Wheels.jpg">
+            </div>
+            <div class="card-content">
+              <p>Affordable and dependable parts</p>
+            </div>
+            <div class="card-action">
+              <a href="https://www.fcpeuro.com/BMW-parts/" target="blank">Shop Aftermarket Parts</a>
+            </div>
+          </div>
+        </div>
+    </div>
   </div>
+</div>
 
 {% endblock %}
