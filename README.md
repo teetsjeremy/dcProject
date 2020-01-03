@@ -6,22 +6,27 @@ I came up with the idea of a forum type site that allows members to search, add 
 
 UX
 
-This website was created with the idea of allowing BMW owners to talk about and share questions they may be having regarding issues with thier car. By using the site, they can simply post a question/comment/issue and have people from accross different communities help them.
+This website was created with the idea of allowing BMW owners to talk about and share questions they may be having regarding issues with thier car. By using the site, they can simply post a question/comment/issue and have people from accross different communities help them. I also made sure to use solid responsive design as use from a mobile device seems very helpful.
+
+The app config was set using the port of 5000 as shown in the mini-project set up as well as the ip address set-up.
+The db_uri setting was the most challenging for me to figure out. In the end, I was able to establish a way of hiding said username and password.
 
 
 Features
 
 Existing Features
 
-View a database  - allows users to view, edit and add topics, by having them fill out a topic form.
+View a database  - allows users to view, edit, add, and delete topics, by having them fill out a topic form.
 Contact us  - allows users to fill out a contact form and send an email to site mediators.
-Shop page  - provides links to various outside pages that provide auto parts
+Shop page  - provides links to various outside pages that provide auto parts as well as immediate dropdown options from the header.
 
 ...
 
 Features Left to Implement
 
 I would like to implement a search engine to sort and find issues. I would also like to possible create a notification system to alert users when someone has updated thier post.
+
+I wouls also like to implement a way of having all additions pass through a check system of sorts. Maybe have an administrator review all post/edit requests.
 
 Technologies Used
 
@@ -57,7 +62,7 @@ The site transitions from browser screen size and device screen size as desired.
 
 I ran into several interesting bugs during development. The main issue that I addressed was actually occuring during attempted early deployment. When attempting to push to heroku, my build kept crashing due to unknown requirements being in my requirements.txt file. After much research and asking for help, I was able to determine that AWS Cloud9 environment was creating its own requirements to run the app internally and adding those requirements.
 
-I struggled with getting the edit task function to work properly. I was unable to get the data from the database to actually bind to the form. Once I found out where my errors were in my python apps and database structure, all functions worked correctly. 
+I struggled with getting the edit task function to work properly. I was unable to get the data from the database to actually bind to the form. Once I found out that my errors were in my python app routes and database structure, all functions worked correctly. 
 
 Deployment
 I used heroko to deploy my site. All parameters used were taken directly from the mini project instructions earlier in the unit.
